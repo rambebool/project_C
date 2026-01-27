@@ -13,6 +13,37 @@
  =========================================================================
 */
 
+/*============================== ФУНКЦИИ ==============================//
+// тип ф-ии _ имя(что принимает) {тело функции, что выполняет}
+// void - ничего не возвращают, только выполняют действия в теле функции.
+// прототип функции 
+=========================================================================
+*/
+	// === ПРОТОТИПЫ ФУНКЦИЙ ===
+void set_localization();
+int ploshyad_pryamougolnika(int shirina, int visota);
+
+int main()
+{
+	set_localization(); // функция локализации.
+
+	// <=== БЛОК ПЕРЕМЕННЫХ ===>
+	int a, b;
+	int result_ab;
+
+	// <=== БЛОК КОДА ===>
+	printf("Введите ширину прямоугольника: ");
+	scanf("%d", &a);
+	printf("Введите высоту прямоугольника ");
+	scanf("%d", &b);
+
+	result_ab = ploshyad_pryamougolnika(a, b);
+	printf("Результат: %d", result_ab);
+
+	return 0;
+}
+
+// <=== ОПРЕДЕЛЕНИЯ ФУНКЦИЙ ===>
 void set_localization()
 {
 	// <-- Устанпвливаем кодовую страницу консоли в UTF-8 -->
@@ -21,36 +52,8 @@ void set_localization()
 	// <-- Устанавливаем локаль CRT в UTF-8 -->
 	setlocale(LC_ALL, ".UTF8");
 }
-
-/*============================== ФУНКЦИИ ==============================//
-// тип ф-ии _ имя(что принимает) {тело функции, что выполняет}
-//
-=========================================================================
-*/
-
-
-void print_square(int number)
+int ploshyad_pryamougolnika(int shirina, int visota)
 {
-	int square = number * number;
-	printf("ИТОГ: %d в квадрате = %d\n", number, square);
-}
-
-int main()
-{
-	// <=== БЛОК ЛОКАЛИЗАЦИИ ===>
-	set_localization(); // функция локализации.
-
-	// <=== БЛОК ПЕРЕМЕННЫХ ===>
-
-	int random_number;
-
-	// <=== БЛОК КОДА ===>
-
-	printf("Введите число: ");
-	scanf("%d", &random_number);
-
-	print_square(random_number);
-
-
-	return 0;
+	int result_ploshyad_pryamougolnika = shirina * visota;
+	return result_ploshyad_pryamougolnika;
 }
